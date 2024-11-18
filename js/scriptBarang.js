@@ -23,7 +23,7 @@ bukaForm.addEventListener("click", () => {
                     <label for="jumlah">Jumlah Barang:</label>
                     <input type="number" id="jumlah" required><br>
                     <label for="harga">Harga Persatuan:</label>
-                    <input type="text" id="harga" required>
+                    <input type="number" id="harga" required>
                     <button type="submit" class="t-form">Tambah</button>
                 </form>
             </div>
@@ -141,7 +141,7 @@ function editRow(id) {
             <label for="jumlah">Jumlah Barang:</label>
             <input type="number" id="jumlah" value="${data.jumlah}" required>
             <label for="harga">Harga Persatuan:</label>
-            <input type="text" id="harga" value="${data.harga}" required>
+            <input type="number" id="harga" value="${data.harga}" required>
             <button type="submit" class="t-form">Simpan Perubahan</button>
           </form>
         </div>
