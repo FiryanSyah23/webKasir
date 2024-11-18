@@ -1,0 +1,73 @@
+:root {
+    --nc-primary: #072138;
+    --nc-secondary: #A0DEFF;
+    --nc-third: #d9f7ff;
+    --nc-Fourth: #FFF9D0;
+    --nc-border: rgb(77, 85, 121);
+}
+
+.pengeluaran {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 68px;
+}
+
+.kartu {
+    width: 40vw;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.529);
+    border-radius: 10px;
+}
+
+.kartu-header {
+    font-size: 1.2rem;
+    color: var(--nc-Fourth);
+    background-color: var(--nc-primary);
+    border-radius: 10px 10px 0 0;
+    padding: .5em;
+    text-transform: capitalize;
+}
+
+.kartu-main {
+    height: 25vh;
+    background-color: var(--nc-Fourth);
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+.kartu-main form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+form label{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+form [type=number],
+form [type=text] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+form button {
+    width: 30vw;
+    padding: 5px;
+    background-color: green;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    align-self: center;
+}

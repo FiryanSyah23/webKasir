@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website E-Comers">
+    <meta name="keywords" content="Belanja,Membeli,Eletronik">
+    <meta name="author" content="Firyan Syah">
+    <title>E-Shop</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/barang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-sidebar">
+            <i class="fa fa-bars"></i>
+            <h1 class="title">S-Mart</h1>
+        </div>
+        <div class="sidebar-list">
+            <ul>
+                <li><a href="index.html">dashboard</a></li>
+                <li><a href="kasir.html">kasir</a></li>
+                <li><a href="barang.html">barang</a></li>
+                <li><a href="pengeluaran.html">pengeluaran</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="barang">
+        <div class="card-barang">
+            <div class="card-header">
+                <h2>stok barang</h2>
+            </div>
+            <div class="card-content">
+                <div class="scroll-table">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>tgl barang masuk</th>
+                                <th>Nama Barang</th>
+                                <th>jumlah barang</th>
+                                <th>harga persatuan</th>
+                                <th>harga total</th>
+                                <th>edit</th>
+                                <th>hapus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="t-tambah" type="button">tambah</button>
+            </div>
+        </div>
+    </main>
+    <div id="modalContainer">
+
+    </div>
+    <script src="/js/script.js"></script>
+    <script src="/js/barang.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website E-Comers">
+    <meta name="keywords" content="Belanja,Membeli,Eletronik">
+    <meta name="author" content="Firyan Syah">
+    <title>E-Shop</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/kasir.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-sidebar">
+            <i class="fa fa-bars"></i>
+            <h1 class="title">S-Mart</h1>
+        </div>
+        <div class="sidebar-list">
+            <ul>
+                <li><a href="index.html">dashboard</a></li>
+                <li><a href="kasir.html">kasir</a></li>
+                <li><a href="barang.html">barang</a></li>
+                <li><a href="pengeluaran.html">pengeluaran</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="kasir">
+        <div class="card-kasir">
+            <div class="kasir-header">
+                <h2>Kasir</h2>
+            </div>
+            <div class="kasir-content">
+                <div class="kasir-display">
+                    <div class="display-output" id="display-output"></div>
+                    <button type="submit" class="submit-total" id="submit">total</button>
+                </div>
+                <div class="scroll-table">
+                    <table id="output-table-barang">
+                        <thead>
+                            <th>ID</th>
+                            <th>Nama barang</th>
+                            <th>stok</th>
+                            <th>harga persatuan</th>
+                            <th>tambah</th>
+                            <th>kurang</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/script.js"></script>
+    <script src="/js/kasir.js"></script>
+</body>
+
+</html>

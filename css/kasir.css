@@ -1,0 +1,239 @@
+:root {
+    --nc-primary: #072138;
+    --nc-secondary: #A0DEFF;
+    --nc-third: #d9f7ff;
+    --nc-Fourth: #FFF9D0;
+    --nc-border: rgb(77, 85, 121);
+}
+
+.kasir {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 66px;
+}
+
+.card-kasir {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 10px;
+}
+
+.kasir-header {
+    color: var(--nc-Fourth);
+    background-color: var(--nc-primary);
+    border-radius: 10px 10px 0 0;
+    padding: 1rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.kasir-content {
+    height: 70vh;
+    background-color: var(--nc-Fourth);
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.kasir-display {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 auto;
+}
+
+.display-output {
+    height: 100%;
+    background-color: white;
+    border: 2px solid var(--nc-border);
+    border-radius: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.display-output>div {
+    padding: 10px;
+    border-bottom: 2px solid;
+    text-transform: capitalize;
+}
+
+.submit-total {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #008300;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
+.scroll-table {
+    width: 50vw;
+    overflow: auto;
+    scrollbar-width: none;
+    border-radius: 10px;
+}
+
+.scroll-table table {
+    width: 100%;
+}
+
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(128, 128, 128);
+    color: white;
+    text-transform: capitalize;
+    text-wrap: nowrap;
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+    text-transform: capitalize;
+    text-wrap: nowrap;
+    padding: 10px;
+}
+
+tr {
+    background: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(215, 212, 212);
+}
+
+.kurang,
+.tambah {
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    transition: .2s ease-in-out;
+    padding: 10px 20px;
+}
+
+.tambah {
+    background-color: rgb(3, 182, 3)
+}
+
+.tambah:hover {
+    background-color: #008300
+}
+
+.kurang {
+    background-color: red
+}
+
+.kurang:hover {
+    background-color: #8f0202
+}
+
+
+/* Gaya untuk perangkat mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .kasir-content {
+        flex-direction: column;
+        height: 80vh;
+    }
+
+    .display-output {
+        height: 200px;
+    }
+
+    .scroll-table {
+        width: 100%;
+    }
+
+
+    th,
+    td {
+        text-wrap: wrap;
+        vertical-align: middle;
+    }
+}
+
+/* Gaya untuk tablet (min-width: 481px hingga max-width: 768px) */
+@media screen and (min-width: 481px) and (max-width: 929px) {
+    .kasir-content {
+        flex-direction: column;
+        height: 80vh;
+    }
+
+    .display-output {
+        height: 200px;
+    }
+
+    .scroll-table {
+        width: 100%;
+    }
+
+
+    th,
+    td {
+        text-wrap: wrap;
+        vertical-align: middle;
+    }
+
+}
+
+/* Gaya untuk laptop (min-width: 769px hingga max-width: 1024px) */
+@media screen and (min-width: 930px) and (max-width: 1377px) {
+    .kasir-content {
+        height: 70vh;
+    }
+
+    .submit-total {
+        font-size: 1.2rem;
+    }
+
+    .scroll-table {
+        width: 55vw;
+    }
+}
+
+
+/* Gaya untuk desktop (min-width: 1025px) */
+@media screen and (min-width: 1377px) {
+    .kasir-header {
+        font-size: 2rem;
+    }
+
+    .scroll-table {
+        font-size: 1.7rem;
+    }
+
+    .scroll-table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .tambah,
+    .kurang {
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        padding: 10px;
+        font-size: 4rem;
+        line-height: 0;
+        font-size: 300;
+    }
+
+    .submit-total {
+        padding: 20px;
+        font-size: 2rem;
+    }
+
+    .display-output>div {
+        font-size: 1.8rem;
+    }
+}

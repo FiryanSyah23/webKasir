@@ -1,0 +1,258 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:root {
+    --nc-primary: #072138;
+    --nc-secondary: #A0DEFF;
+    --nc-third: #d9f7ff;
+    --nc-Fourth: #FFF9D0;
+    --nc-border: rgb(77, 85, 121);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* header */
+header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 66px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20px;
+    align-items: center;
+    background-color: var(--nc-primary);
+}
+
+
+
+/* Menu Sidabar */
+.menu-sidebar {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    gap: 10px;
+    color: var(--nc-Fourth);
+}
+
+.title {
+    width: 150px;
+    text-align: center;
+}
+
+.fa-bars {
+    font-size: 1.6rem;
+    padding: 2px;
+    color: var(--nc-Fourth);
+}
+
+/* Sidebar list */
+.sidebar-list {
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+    transform: translateX(-300px);
+    background-color: var(--nc-primary);
+    top: 65px;
+    left: 0;
+    transition: transform .3s, opacity .5s, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.transisi-slide {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-list ul {
+    width: 100%;
+    padding: 10px;
+}
+
+.sidebar-list li {
+    padding-inline: 5px;
+    padding-block: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    color: var(--nc-Fourth);
+}
+
+.sidebar-list li:hover {
+    background-color: var(--nc-secondary);
+    color: rgb(0, 0, 0);
+}
+
+.sidebar-list li a {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+/* profil menu */
+.profil-menu {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.fa-user {
+    width: 28px;
+    border: 2px solid;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: var(--nc-primary);
+    padding: 1px;
+}
+
+.fa-user::before {
+    position: relative;
+    top: 1px;
+}
+
+
+/* main */
+.container {
+    width: 100%;
+    max-width: 124rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+    padding: 50px;
+    gap: 100px;
+}
+
+.container .display {
+    width: 230px;
+    border-radius: 10px;
+    border: 2px solid;
+    box-shadow: 1px 1px 6px -1px rgb(0, 0, 0);
+    padding: 20px;
+    background-color: var(--nc-Fourth);
+}
+
+.container h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 5px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.container p {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 80px;
+    font-weight: 900;
+}
+
+
+/* Gaya untuk perangkat mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .container .display {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        word-wrap: break-word;
+    }
+
+    .container .display h3,
+    .container .display p {
+        font-size: 1.5rem;
+    }
+
+
+}
+
+/* Gaya untuk tablet (min-width: 481px hingga max-width: 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        gap: 20px;
+    }
+}

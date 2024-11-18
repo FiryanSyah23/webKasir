@@ -1,0 +1,250 @@
+:root {
+    --nc-primary: #072138;
+    --nc-secondary: #A0DEFF;
+    --nc-third: #d9f7ff;
+    --nc-Fourth: #FFF9D0;
+    --nc-border: rgb(77, 85, 121);
+}
+
+.barang {
+    width: 100%;
+    max-width: 124rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-barang {
+    width: 70vw;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.529);
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+.card-header {
+    font-size: 1.2rem;
+    color: var(--nc-Fourth);
+    background-color: var(--nc-primary);
+    border-radius: 10px 10px 0 0;
+    padding: .5em;
+    text-transform: capitalize;
+}
+
+.card-content {
+    width: 100%;
+    height: 450px;
+    background-color: var(--nc-Fourth);
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.scroll-table {
+    width: 100%;
+    height: 380px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    border-radius: 5px;
+}
+
+.t-tambah {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(29, 224, 29);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.593);
+    transition: background-color .3s ease;
+}
+
+.t-tambah:hover {
+    cursor: pointer;
+    background-color: rgb(21, 159, 21);
+}
+
+.buttonDelete {
+    width: 65px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(219, 24, 24);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.593);
+}
+
+.buttonDelete:hover {
+    background-color: rgb(170, 19, 19);
+}
+
+
+.buttonEdit {
+    width: 65px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 217, 26);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.593);
+}
+
+.buttonEdit:hover {
+    background-color: rgba(189, 162, 23, 0.983);
+}
+
+form label {
+    text-transform: capitalize;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+tr {
+    background-color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
+
+
+td {
+    padding-inline: 10px;
+    text-wrap: nowrap;
+    text-transform: capitalize;
+}
+
+th {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    text-transform: capitalize;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+
+/* modal  */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    padding: 25px;
+    width: 35vw;
+    height: auto;
+    margin: 70px auto;
+    border-radius: 5px;
+}
+
+.modal-content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content input[type=text],
+.modal-content input[type=number],
+.modal-content input[type=date] {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.t-form {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(29, 224, 29);
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.593);
+    transition: background-color .3s ease;
+    margin-top: 30px;
+}
+
+.t-form:hover {
+    cursor: pointer;
+    background-color: rgb(21, 159, 21);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Gaya untuk perangkat mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .card-barang {
+        width: 95vw;
+    }
+
+    th,
+    td {
+        font-size: .8rem;
+    }
+
+    .t-tambah {
+        font-size: .7rem;
+
+    }
+
+    .modal-content {
+        width: 100%;
+        font-size: .7rem;
+    }
+
+    .card-content {
+        height: 350px;
+    }
+
+    .scroll-table {
+        height: 292px;
+    }
+
+}
+
+/* Gaya untuk tablet (min-width: 481px hingga max-width: 768px) */
+@media screen and (min-width: 481px) and (max-width: 769px) {
+    .card-barang {
+        width: 100vw;
+    }
+}
+
+/* Gaya untuk laptop (min-width: 769px hingga max-width: 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .card-barang {
+        width: 90vw;
+    }
+}

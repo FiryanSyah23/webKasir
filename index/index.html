@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website E-Comers">
+    <meta name="keywords" content="Belanja,Membeli,Eletronik">
+    <meta name="author" content="Firyan Syah">
+    <title>E-Shop</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-sidebar">
+            <i class="fa fa-bars"></i>
+            <h1 class="title">S-Mart</h1>
+        </div>
+        <div class="sidebar-list">
+            <ul>
+                <li><a href="index.html">dashboard</a></li>
+                <li><a href="kasir.html">kasir</a></li>
+                <li><a href="barang.html">barang</a></li>
+                <li><a href="pengeluaran.html">pengeluaran</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="container">
+        <div class="totalPelanggan display">
+            <h3>total Konsumen</h3>
+            <p id="totalKonsumen"></p>
+        </div>
+        <div class="totalPenghasilan display">
+            <h3>total penghasilan</h3>
+            <p id="totalPenghasilan"></p>
+        </div>
+        <div class="stokBarang display">
+            <h3>stok jenis barang</h3>
+            <p id="stokOuput"></p>
+        </div>
+    </main>
+    <script src="/js/script.js"></script>
+
+    <script>
+        const stockBarang = JSON.parse(localStorage.getItem("stockBarang")) || [];
+        const totalPenglanggan = JSON.parse(localStorage.getItem('hslPenjualan')) || [];
+
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0,
+            }).format(angka);
+        }
+
+        function hitungTotalStok() {
+            const barangTersedia = stockBarang.filter(item => item.jumlah > 0);
+            const totalItem = barangTersedia.length;
+            document.getElementById("stokOuput").textContent = totalItem;
+        }
+
+        function hitungTotalConsumen() {
+            const totalKonsumenValue = totalPenglanggan.length
+            document.getElementById('totalKonsumen').textContent = totalKonsumenValue;
+        }
+
+        function hitungPenghasilanPenjualan() {
+            const totalPenghasilanValue = totalPenglanggan.reduce((total, item) => total + item.Penghasilan, 0)
+            document.getElementById('totalPenghasilan').textContent = formatRupiah(totalPenghasilanValue)
+        }
+
+
+        // pemanggilan function
+        hitungPenghasilanPenjualan();
+        hitungTotalConsumen();
+        hitungTotalStok();
+    </script>
+
+</body>
+
+</html>
