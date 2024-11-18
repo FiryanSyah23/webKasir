@@ -2,18 +2,17 @@ const stockBarang = JSON.parse(localStorage.getItem("stockBarang")) || [];
 const submitTotalKasir = document.getElementById("submit");
 const hasilPenjualan = JSON.parse(localStorage.getItem("hslPenjualan")) || [];
 
-submitTotalKasir.addEventListener("click", () => {
-  let totalKonsumen = JSON.parse(localStorage.getItem("Tkonsumen")) || 0;
-  totalKonsumen++ // Anda dapat mengganti `1` dengan nilai lain jika perlu
-  localStorage.setItem("Tkonsumen", JSON.stringify(totalKonsumen));
-});
-
 submitTotalKasir.addEventListener("click", function () {
   let totalPenghasilan = 0; // Inisialisasi total penghasilan
 
   // Ambil semua item dari displayOutput
   const displayOutput = document.getElementById("display-output");
   const items = displayOutput.querySelectorAll("div[data-nama]");
+
+  if (items.length === 0) {
+    alert("Tidak ada item yang ditambahkan. Silakan tambahkan item sebelum submit.");
+    return; // Hentikan eksekusi jika tidak ada item
+  }
 
   items.forEach((item) => {
     const jumlahText = item.querySelector(".jumlah").textContent;
@@ -45,6 +44,10 @@ submitTotalKasir.addEventListener("click", function () {
     hasilPenjualan.push({ Penghasilan: totalPenghasilan });
   }
   localStorage.setItem("hslPenjualan", JSON.stringify(hasilPenjualan)); // Simpan ke Local Storage
+
+  let totalKonsumen = JSON.parse(localStorage.getItem("Tkonsumen")) || 0;
+  totalKonsumen++; // Anda dapat mengganti `1` dengan nilai lain jika perlu
+  localStorage.setItem("Tkonsumen", JSON.stringify(totalKonsumen));
 
   simpanKeLocalStorage();
   displayOutput.innerHTML = "";
