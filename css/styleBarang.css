@@ -165,10 +165,13 @@ th {
 }
 
 .modal-content input {
+    width: 100%;
     padding: 10px;
     border: 1px solid;
     border-radius: 5px;
 }
+
+
 
 .t-form {
     margin: 10px;
