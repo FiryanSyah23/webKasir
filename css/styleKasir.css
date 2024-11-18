@@ -152,6 +152,7 @@ tr:nth-child(even) {
 
     .scroll-table {
         width: 100%;
+        height: 250px;
     }
 
 
