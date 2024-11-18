@@ -47,7 +47,7 @@
     flex-direction: column;
 }
 
-form label{
+form label {
     font-size: 1.5rem;
     text-transform: capitalize;
 }
@@ -71,3 +71,27 @@ form button {
     margin-top: 20px;
     align-self: center;
 }
+
+/* Gaya untuk perangkat mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .kartu {
+        width: 90vw;
+    }
+
+    .kartu-main {
+        height: 20vh;
+    }
+
+    form button {
+        width: 40vw;
+    }
+}
+
+/* Gaya untuk tablet (min-width: 481px hingga max-width: 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {}
+
+/* Gaya untuk laptop (min-width: 769px hingga max-width: 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+
+/* Gaya untuk desktop (min-width: 1025px) */
+@media screen and (min-width: 1025px) {}
