@@ -168,13 +168,14 @@ tr:nth-child(even) {
         flex-direction: column;
         height: 80vh;
     }
-
+    
     .display-output {
         height: 200px;
     }
 
     .scroll-table {
         width: 100%;
+        height: 250px;
     }
 
 
