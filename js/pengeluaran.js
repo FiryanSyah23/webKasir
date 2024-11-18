@@ -3,12 +3,12 @@ const tombolForm = document.getElementById("submitForm");
 tombolForm.addEventListener("click", () => {
   const hasilPenjualan = JSON.parse(localStorage.getItem("hslPenjualan")) || [];
   const pengurangan = parseFloat(document.getElementById("pengeluaran").value);
-  const hasilPenjualanProperty = hasilPenjualan.find((item) => item.Penghasilan > 0);
+  const totalPenghasilanValue = hasilPenjualan.reduce((total, item) => total + item.Penghasilan, 0);
 
-  if (hasilPenjualanProperty) {
-    const penghasilanAkhir = hasilPenjualanProperty.Penghasilan - pengurangan;
-    if (pengurangan > hasilPenjualanProperty.Penghasilan) {
-      alert("Pengeluaran tidak boleh lebih besar dari nilai Penghasilan =" + hasilPenjualanProperty.Penghasilan);
+  if (totalPenghasilanValue) {
+    const penghasilanAkhir = totalPenghasilanValue - pengurangan;
+    if (pengurangan > totalPenghasilanValue) {
+      alert("Pengeluaran tidak boleh lebih besar dari nilai Penghasilan =" + totalPenghasilanValue);
       return;
     }
     alert("Nilai Penghasilan setelah pengeluaran adalah " + penghasilanAkhir);
@@ -26,6 +26,8 @@ tombolForm.addEventListener("click", () => {
       item.Penghasilan -= pengurangan;
     }
   });
+
+  
 
   localStorage.setItem("hslPenjualan", JSON.stringify(hasilPenjualan));
 });

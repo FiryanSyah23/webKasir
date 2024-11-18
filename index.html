@@ -8,7 +8,7 @@
     <meta name="keywords" content="Belanja,Membeli,Eletronik">
     <meta name="author" content="Firyan Syah">
     <title>E-Shop</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
@@ -41,11 +41,13 @@
             <p id="stokOuput"></p>
         </div>
     </main>
-    <script src="js/script.js"></script>
+    <script src="js/Script.js"></script>
 
     <script>
         const stockBarang = JSON.parse(localStorage.getItem("stockBarang")) || [];
         const totalPenglanggan = JSON.parse(localStorage.getItem('hslPenjualan')) || [];
+        const totalPembeli = JSON.parse(localStorage.getItem('Tkonsumen')) || 0;
+
 
         function formatRupiah(angka) {
             return new Intl.NumberFormat("id-ID", {
@@ -62,8 +64,7 @@
         }
 
         function hitungTotalConsumen() {
-            const totalKonsumenValue = totalPenglanggan.length
-            document.getElementById('totalKonsumen').textContent = totalKonsumenValue;
+            document.getElementById('totalKonsumen').textContent = totalPembeli;
         }
 
         function hitungPenghasilanPenjualan() {

@@ -2,6 +2,12 @@ const stockBarang = JSON.parse(localStorage.getItem("stockBarang")) || [];
 const submitTotalKasir = document.getElementById("submit");
 const hasilPenjualan = JSON.parse(localStorage.getItem("hslPenjualan")) || [];
 
+submitTotalKasir.addEventListener("click", () => {
+  let totalKonsumen = JSON.parse(localStorage.getItem("Tkonsumen")) || 0;
+  totalKonsumen++ // Anda dapat mengganti `1` dengan nilai lain jika perlu
+  localStorage.setItem("Tkonsumen", JSON.stringify(totalKonsumen));
+});
+
 submitTotalKasir.addEventListener("click", function () {
   let totalPenghasilan = 0; // Inisialisasi total penghasilan
 
@@ -21,21 +27,29 @@ submitTotalKasir.addEventListener("click", function () {
     totalPenghasilan += jumlah * (harga / jumlah); // harga dibagi jumlah untuk mendapatkan harga per item
   });
 
-  class hasilJual {
-    constructor(value) {
-      this.Penghasilan = value;
-    }
-  }
+  // class hasilJual {
+  //   constructor(value) {
+  //     this.Penghasilan = value;
+  //   }
+  // }
 
-  const addPenghasilan = new hasilJual(totalPenghasilan);
-  hasilPenjualan.push(addPenghasilan);
+  // const addPenghasilan = new hasilJual(totalPenghasilan);
+  // hasilPenjualan.push(addPenghasilan);
+
+  // Cek apakah sudah ada penghasilan sebelumnya
+  if (hasilPenjualan.length > 0) {
+    // Jika ada, tambahkan ke penghasilan yang ada
+    hasilPenjualan[0].Penghasilan += totalPenghasilan;
+  } else {
+    // Jika tidak ada, buat objek baru
+    hasilPenjualan.push({ Penghasilan: totalPenghasilan });
+  }
   localStorage.setItem("hslPenjualan", JSON.stringify(hasilPenjualan)); // Simpan ke Local Storage
 
   simpanKeLocalStorage();
   displayOutput.innerHTML = "";
   alert("Data berhasil disimpan ke local storage!");
   alert(`Total harga anda adalah Rp ${totalPenghasilan}`);
-  window.location.href = "index.html"; 
 });
 
 function ambilData(stockBarang) {
